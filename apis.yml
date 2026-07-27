@@ -1,8 +1,27 @@
 aid: grotto-ai
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/grotto-ai.png
 name: Grotto AI
-description: 'Grotto AI is a company surfaced as a portfolio company of iconiq-capital and added to the
-  API Evangelist network as a stub for enrichment. Sector: ai. This profile is a lead awaiting the enrichment
-  pipeline.'
+description: 'Grotto AI is an AI sales-coaching platform purpose-built for the multifamily
+  apartment leasing industry. Founded by former EvolutionIQ leaders Nick Deveau (CEO)
+  and Ben Epstein (CTO), Grotto delivers real-time call guidance, tour and call coaching,
+  and prospect-lifecycle support across email and text that help leasing agents handle
+  objections, book tours, and convert more leads to recover net operating income and
+  asset value. The platform works alongside multifamily systems such as Entrata, Funnel,
+  and Yardi and is used by operators including Weidner Apartment Homes and Hillpointe.
+  Grotto is SOC 2 Type II and ISO 27701 certified and Fair Housing compliant. It is
+  backed by ICONIQ. Grotto does not publish a public developer API, SDK, or documentation
+  surface; it is a demo-led enterprise SaaS product.'
 url: https://raw.githubusercontent.com/api-evangelist/grotto-ai/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -12,10 +31,16 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-19'
 tags:
 - Company
-- Ai
+- AI
+- Multifamily
+- Leasing
+- Sales Coaching
+- PropTech
+- Real Estate
+- Conversation Intelligence
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -24,4 +49,21 @@ maintainers:
   email: info@apis.io
 common:
 - type: Website
-  url: https://grottoai.com/
+  url: https://grotto.ai/
+- type: Blog
+  url: https://grotto.ai/blog
+- type: TermsOfService
+  url: https://grotto.ai/terms-and-conditions
+- type: PrivacyPolicy
+  url: https://grotto.ai/privacy-policy
+- type: TrustCenter
+  url: security/grotto-ai-trust-center.yml
+- type: Compliance
+  url: https://trust.grotto.ai/
+- type: DomainSecurity
+  url: security/grotto-ai-domain-security.yml
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence
