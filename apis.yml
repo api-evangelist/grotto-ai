@@ -31,7 +31,7 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-19'
+modified: '2026-08-14'
 tags:
 - Company
 - AI
@@ -62,8 +62,48 @@ common:
   url: https://trust.grotto.ai/
 - type: DomainSecurity
   url: security/grotto-ai-domain-security.yml
+- type: About
+  url: https://grotto.ai/about-us
+- type: Press
+  url: https://grotto.ai/press
+- type: CaseStudies
+  url: https://grotto.ai/use-cases/weidner
+- type: Careers
+  url: https://jobs.ashbyhq.com/grotto
+- type: Contact
+  url: mailto:info@grotto.ai
+- type: Plans
+  url: plans/grotto-ai-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/grotto-ai-rate-limits.yml
+- type: LLMsTxt
+  url: llms/grotto-ai-llms.txt
 x-enrichment:
-  date: '2026-07-19'
-  status: backfilled
+  date: '2026-08-14'
+  status: minimal
+  artifacts_added: 4
   pass: local-v1
-  note: backfilled from .gitignore signal + verified work evidence
+  note: >-
+    Full contract-discovery pass run 2026-08-14 (STEP 0b): no OpenAPI, GraphQL, MCP or
+    A2A surface exists on any Grotto host. Prior backfill stamp superseded.
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: >-
+    Grotto sells a demo-led leasing-coaching product with no developer surface at all —
+    its own sitemap.xml lists twelve marketing pages and nothing else, /docs, /api,
+    /developers and /pricing all 404, no api./docs./developer. subdomain resolves in DNS,
+    and the product itself runs as per-customer web-app tenants (demo.grotto.ai, a Solara
+    Python app) that publish no endpoints, spec or webhook catalog.
+  evidence:
+  - url: https://grotto.ai/sitemap.xml
+    status: 200
+  - url: https://grotto.ai/developers
+    status: 404
+  - url: https://grotto.ai/openapi.json
+    status: 404
+  - url: https://grotto.ai/.well-known/agent-card.json
+    status: 404
+  - url: https://demo.grotto.ai/openapi.json
+    status: 404
+  checked: '2026-08-14'
