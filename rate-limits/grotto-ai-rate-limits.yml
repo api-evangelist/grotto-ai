@@ -1,0 +1,19 @@
+generated: '2026-08-14'
+method: searched
+source: https://grotto.ai/
+limit_count: 0
+limits: []
+headers: []
+note: >-
+  No rate limits are documented because Grotto AI publishes no API. There is no developer
+  portal, reference, or machine-readable contract to attach limits to — /docs, /api and
+  /developers all 404 on grotto.ai, and no api.*/docs.*/developer.* subdomain resolves in
+  DNS. This is an honest zero recorded against a verified absence of an API surface, not
+  an undocumented limit on a live API.
+evidence:
+- url: https://grotto.ai/docs
+  status: 404
+- url: https://grotto.ai/api
+  status: 404
+- url: https://grotto.ai/developers
+  status: 404

@@ -1,0 +1,22 @@
+generated: '2026-08-14'
+method: searched
+source: https://grotto.ai/
+plan_count: 0
+model: demo-led enterprise sales
+currency: null
+plans: []
+note: >-
+  Grotto AI publishes no pricing or plans of any kind. https://grotto.ai/pricing returns
+  404 and the site's own sitemap.xml lists twelve pages, none of them pricing. Every
+  conversion path on the marketing site is a "Book a Demo" form (https://grotto.ai/demo),
+  and the product is sold per-operator — each customer runs on its own tenant subdomain.
+  This is a recorded zero, not a gap in the search.
+evidence:
+- url: https://grotto.ai/pricing
+  status: 404
+- url: https://grotto.ai/sitemap.xml
+  status: 200
+  note: 12 URLs, no pricing page
+- url: https://grotto.ai/demo
+  status: 200
+  note: demo request form is the only published commercial path

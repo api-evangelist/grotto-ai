@@ -1,0 +1,69 @@
+generated: '2026-08-14'
+method: probed
+source: live GET of /.well-known/* on every Grotto host discovered
+note: >-
+  Every /.well-known/ path probed returned 404 on both the marketing host (grotto.ai)
+  and the product host (demo.grotto.ai). A control path (/.well-known/zzz-control-9182)
+  also returned 404 on both, confirming the 404s are genuine and not a soft-404 shell.
+  trust.grotto.ai is a hosted Vanta trust-center single-page app that answers HTTP 200
+  with the same HTML shell for EVERY path, including the control path — its 200s are a
+  catch-all, not documents, so they are recorded as misses. No WellKnown, SecurityTxt or
+  AgentCard pointer is emitted: this file records a verified absence.
+hosts:
+- host: https://grotto.ai
+  role: website
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /.well-known/zzz-control-9182
+    status: 404
+    note: control path — confirms host returns real 404s
+- host: https://demo.grotto.ai
+  role: product application (Solara/Python app served via Google App Engine behind Cloudflare)
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /.well-known/zzz-control-9182
+    status: 404
+    note: control path — confirms host returns real 404s
+- host: https://trust.grotto.ai
+  role: hosted Vanta trust center
+  catch_all_200: true
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    document: false
+    note: HTML SPA shell, not RFC 9116 text — SPA catch-all
+  - path: /.well-known/agent-card.json
+    status: 200
+    document: false
+    note: HTML SPA shell, not an AgentCard — SPA catch-all
+  - path: /.well-known/zzz-control-9182.txt
+    status: 200
+    document: false
+    note: control path also returns 200 HTML — proves the catch-all
+documents_found: 0
